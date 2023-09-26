@@ -1,0 +1,20 @@
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 137
+C:\Users\顯闉\PycharmProjects\Django\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\顯闉\PycharmProjects\Django\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\顯闉\PycharmProjects\Django\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\顯闉\PycharmProjects\Django\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\顯闉\PycharmProjects\Django\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\顯闉\PycharmProjects\Django\myproject\myapp\views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 137
+"GET /about HTTP/1.1" 200 141
+C:\Users\顯闉\PycharmProjects\Django\myproject\myproject\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\顯闉\PycharmProjects\Django\myproject\myproject\settings.py changed, reloading.
+INFO 2023-09-26 14:42:06,066 autoreload 13140 7096 Watching for file changes with StatReloader
