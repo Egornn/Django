@@ -1,0 +1,15 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+    <p> Username: {{ client.name }} </p>
+    {% if orders %}
+    <h3>Order for the last {{ count_days }} days</h3>
+        {% for order in orders %}
+            <p>Item: {{ order.goods_id.name }}<br>
+                Description: {{ order.goods_id.description }}<br>
+                Date: {{ order.create_at }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No orders for the client</p>
+    {% endif %}
+{% endblock %}
