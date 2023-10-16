@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -22,9 +23,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-&p-#5*-zy316h^11!8dx@n627z_s^#21x#j3&2^j5&4pen*c!q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECRET_KEY = os.getenv('SECRET_KEY')
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    'tuntis.pythonanywhere.com',
+    'Tuntis.pythonanywhere.com',
+
+]
 
 # Application definition
 
@@ -74,8 +85,15 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Tuntis$default',
+        "USER": "Tuntis",
+        "PASSWORD": os.getenv('MYSQL_PASSWORD'),
+        'HOST': "Tuntis.mysql.pythonanywhere-services.com",
+        'OPTIONS': {
+            'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
+            'charset': 'utf8mb4',
+        },
     }
 }
 
@@ -145,8 +163,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'static/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media '
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
